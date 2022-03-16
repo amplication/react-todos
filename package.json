@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "npm --prefix web start",
+    "postinstall": "npm ci --prefix web"
+  }
+}
