@@ -188,3 +188,4 @@ With our backend created and running locally, we're almost ready to link it to t
 To view the changes for this step, [visit here](https://github.com/MichaelSolati/amplication-x-react/compare/step-001...step-002).
 
 [PREVIOUS](./step-001.md)
+[NEXT](./step-003.md)
