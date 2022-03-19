@@ -203,3 +203,4 @@ We will eventually need to make a few more changes to our backend, but now users
 To view the changes for this step, [visit here](https://github.com/MichaelSolati/amplication-x-react/compare/step-002...step-003).
 
 [PREVIOUS](./step-002.md)
+[NEXT](./step-004.md)
