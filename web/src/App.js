@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
+import { me } from "./lib/auth";
+
+import Auth from "./Auth";
 import CreateTask from "./CreateTask";
 import Tasks from "./Tasks";
 
 function App() {
+  const [user, setUser] = useState();
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    async function getUser() {
+      const result = await me();
+      setUser(result);
+    }
+    getUser();
+  }, [setUser]);
 
   const createTask = (text, id) => ({
     id,
@@ -28,8 +40,14 @@ function App() {
 
   return (
     <div>
-      <CreateTask addTask={addTask} />
-      <Tasks tasks={tasks} toggleCompleted={toggleCompleted} />
+      {user ? (
+        <div>
+          <CreateTask addTask={addTask} />
+          <Tasks tasks={tasks} toggleCompleted={toggleCompleted} />
+        </div>
+      ) : (
+        <Auth setUser={setUser} />
+      )}
     </div>
   );
 }
