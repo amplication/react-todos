@@ -261,3 +261,4 @@ Users are now able to login to the `Todos` application, but we're not saving the
 To view the changes for this step, [visit here](https://github.com/MichaelSolati/amplication-x-react/compare/step-003...step-004).
 
 [PREVIOUS](./step-003.md)
+[NEXT](./step-005.md)
