@@ -240,3 +240,4 @@ So far though we've done everything through HTTP calls, however, Amplication als
 To view the changes for this step, [visit here](https://github.com/MichaelSolati/amplication-x-react/compare/step-004...step-005).
 
 [PREVIOUS](./step-004.md)
+[NEXT](./step-006.md)
