@@ -1,17 +1,36 @@
-import { createUrl, get, isStoredJwt, post, setStoredJwt } from "./http";
+import { gql, isStoredJwt, setStoredJwt, client } from "./apollo";
+
+const GET_ME = gql`
+  query me {
+    me {
+      id
+    }
+  }
+`;
 
 export const me = async () => {
   return isStoredJwt()
-    ? (await get(createUrl("/api/me")).catch(() => null))?.data
+    ? (await client.query({ query: GET_ME }).catch(() => null))?.data.me
     : null;
 };
 
+const LOGIN = gql`
+  mutation login($credentials: Credentials!) {
+    login(credentials: $credentials) {
+      accessToken
+    }
+  }
+`;
+
 export const login = async (username, password) => {
   const result = (
-    await post(createUrl("/api/login"), { username, password }).catch(
-      () => null
-    )
-  )?.data;
+    await client
+      .mutate({
+        mutation: LOGIN,
+        variables: { credentials: { username, password } },
+      })
+      .catch(() => null)
+  )?.data.login;
 
   if (!result) {
     return alert("Could not login");
@@ -20,12 +39,23 @@ export const login = async (username, password) => {
   return me();
 };
 
+const SIGNUP = gql`
+  mutation signup($credentials: Credentials!) {
+    signup(credentials: $credentials) {
+      accessToken
+    }
+  }
+`;
+
 export const signup = async (username, password) => {
   const result = (
-    await post(createUrl("/api/signup"), { username, password }).catch(
-      () => null
-    )
-  )?.data;
+    await client
+      .mutate({
+        mutation: SIGNUP,
+        variables: { credentials: { username, password } },
+      })
+      .catch(() => null)
+  )?.data.signup;
 
   if (!result) {
     return alert("Could not sign up");
