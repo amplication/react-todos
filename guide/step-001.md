@@ -2,23 +2,23 @@
 
 ## Table of Contents
 
-- [`create-react-app`](#create-react-app)
-- [A Blank Canvas](#a-blank-canvas)
-- [Our Components](#our-components)
-- [Putting it Together](#putting-it-together)
-- [Wrap Up](#wrap-up)
+- [Step 1 - Creating a new directory](#step-1---creating-a-new-directory)
+- [Step 2 - Starting with a blank canvas](#step-2---starting-with-a-blank-canvas)
+- [Step 3 - Adding our components](#step-3---adding-our-components)
+- [Step 4 - Putting it together](#step-4---putting-it-together)
+- [Step 5 - Wrapping it up](#step-5---wrapping-it-up)
 
-## `create-react-app`
+## Step 1 - Creating a new directory 
 
 `create-react-app` will create a new directory for our frontend application as well as handle the heavy lifting of configuring all of our build tools.
 
-Create a new folder to contain the frontend, and eventually the backend, application and then open a new terminal and run the command:
+1. Create a new folder to contain the frontend, and eventually the backend, application and then open a new terminal and run the command:
 
 ```bash
 npx create-react-app web
 ```
 
-In the newly created folder that contains `web/` create a `package.json` file and copy into it the following:
+2. In the newly created folder that contains `web/` create a `package.json` file and copy into it the following:
 
 ```json
 {
@@ -29,13 +29,13 @@ In the newly created folder that contains `web/` create a `package.json` file an
 }
 ```
 
-Then create a `.gitignore` file and copy into it the following:
+3. Then create a `.gitignore` file and copy into it the following:
 
 ```txt
 /node_modules
 ```
 
-Finally return to the terminal and run the command:
+4. Finally return to the terminal and run the command:
 
 ```bash
 npm run start
@@ -45,15 +45,15 @@ You'll be greeted by the following screen:
 
 ![create react app result](./assets/step-001-001.png)
 
-## A Blank Canvas
+## Step 2 - Starting with a blank canvas
 
 While the introductory application is nice, we'll want to start with a blank canvas.
 
-Open up the `amplication-react` directory in the IDE of your choice.
+1. Open up the `amplication-react` directory in the IDE of your choice.
 
-Open up `web/src/App.css` and delete all the content in this file. Delete the file `web/src/logo.svg`.
+2. Open up `web/src/App.css` and delete all the content in this file. Delete the file `web/src/logo.svg`.
 
-Open `web/src/index.css` and replace the content of this file with the following:
+3. Open `web/src/index.css` and replace the content of this file with the following:
 
 `web/src/index.css`
 
@@ -159,7 +159,7 @@ ul {
 }
 ```
 
-Then open `web/src/App.js` and replace the content in this file with below:
+4. Then open `web/src/App.js` and replace the content in this file with below:
 
 `web/src/App.js`
 
@@ -173,7 +173,7 @@ function App() {
 export default App;
 ```
 
-## Our Components
+## Step 3 - Adding our components
 
 To build this todo list app, we'll need a few components.
 
@@ -278,11 +278,11 @@ export default function CreateTask({ addTask }) {
 }
 ```
 
-## Putting it Together
+## Step 4 - Putting it together
 
 With our different components created, we'll next put them together and see how they work!
 
-Open up `web/src/App.js` and import React's `useState` function as well as our newly created `CreateTask` and `Tasks` components.
+1. Open up `web/src/App.js` and import React's `useState` function as well as our newly created `CreateTask` and `Tasks` components.
 
 ```diff
 + import { useState } from "react";
@@ -292,14 +292,14 @@ import "./App.css";
 + import Tasks from "./Tasks";
 ```
 
-In the `App` function we will want to create our tasks array, so we'll use `useState` to create a reactive array.
+2. In the `App` function we will want to create our tasks array, so we'll use `useState` to create a reactive array.
 
 ```diff
 function App() {
 + const [tasks, setTasks] = useState([]);
 ```
 
-We'll also want ways to add and toggle the state of tasks.
+3. We'll also want ways to add and toggle the state of tasks.
 
 ```diff
 function App() {
@@ -325,7 +325,7 @@ function App() {
 + };
 ```
 
-With all of our logic and components in place, we'll finally render our components! Replace the return statement with the following so we can see our tasks list and add tasks to that list.
+4. With all of our logic and components in place, we'll finally render our components! Replace the return statement with the following so we can see our tasks list and add tasks to that list.
 
 ```js
 return (
@@ -336,7 +336,7 @@ return (
 );
 ```
 
-## Wrap Up
+## Step 5 - Wrapping it up
 
 Go ahead and try adding tasks or marking them as complete.
 
