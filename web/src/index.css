@@ -1,0 +1,99 @@
+:root {
+  --spacing: 4px;
+  --font-size: 20px;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary: #f44336;
+  --secondary: #2196f3;
+  --text: #212121;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  font-size: var(--font-size);
+  height: 60px;
+  margin: var(--spacing) 0;
+  max-width: 450px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  text-transform: uppercase;
+}
+
+button:hover {
+  filter: brightness(80%);
+}
+
+button:active {
+  filter: brightness(120%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: var(--spacing) 0;
+  padding: calc(4 * var(--spacing));
+}
+
+input {
+  background: transparent;
+  border: 1px solid var(--text);
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: var(--font-size);
+  margin: var(--spacing) 0;
+  max-width: 416px;
+  padding: calc(4 * var(--spacing));
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  height: 48px;
+  margin: var(--spacing);
+  width: 48px;
+}
+
+li {
+  display: flex;
+  height: calc(48px + calc(2 * var(--spacing)));
+  max-width: 450px;
+  width: 100%;
+}
+
+li.completed {
+  text-decoration: line-through;
+}
+
+span {
+  flex: 1;
+  font-size: var(--font-size);
+  line-height: calc(48px + calc(2 * var(--spacing)));
+}
+
+ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: calc(4 * var(--spacing));
+}
