@@ -9,8 +9,8 @@ export default function Task({ task, toggleCompleted }) {
       <input
         type="checkbox"
         checked={completed}
-        onClick={() => toggleCompleted(task.id)}
-        onChange={() => setCompleted(task.completed)}
+        onClick={() => toggleCompleted(task)}
+        onChange={() => setCompleted(!task.completed)}
         readOnly
       />
     </li>
